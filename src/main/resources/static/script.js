@@ -79,7 +79,9 @@ function kjopBillett(){
     }else{
         document.getElementById("notValidFilm").innerHTML="";
     }
-    if(checkAntall() && checkFornavn() && checkEtternavn() && checkTelefonnr() && checkEpost()){
+
+    let allValid = checkAntall() && checkFornavn() && checkEtternavn() && checkTelefonnr() && checkEpost();
+    if(allValid){
         let enBillett = {
             film : film,
             antall: antall,
@@ -100,8 +102,6 @@ function kjopBillett(){
     }
 }
 function slettBilletter(){
-    for(let i = 0; i<billetter.length; i++){
-        billetter.splice(0,billetter.length);
-    }
+    billetter.length=0;
     document.getElementById("visBilletter").innerHTML="";
 }
