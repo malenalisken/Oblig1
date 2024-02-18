@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BillettBestilling</title>
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Bestilling av kinobilletter</h1>
+<form id="billettForm">
+    <label for="velgFilm">Velg film:</label>
+    <select id="velgFilm">
+        <option value="velgFilm" disabled selected>Velg film her</option>
+        <option value="Dune: Part two">Dune: Part two</option>
+        <option value="Bob Marley: One Love">Bob Marley: One Love</option>
+        <option value="Kung Fu Panda 4">Kung Fu Panda 4</option>
+        <option value="Madam Web">Madam Web</option>
+    </select>
+    <div id="notValidFilm"></div><br/>
+
+    <label for="antall">Antall:</label>
+    <input onchange="checkAntall()" id="antall" type="number"  value=""/>
+    <div id="notValidAntall"></div><br/><br/>
+
+    <table><tr>
+        <td><label for="fornavn">Fornavn:</label></td>
+        <td><input onchange="checkFornavn()" id="fornavn" type="text" value=""/></td>
+        <td><div id="notValidFornavn"></div></td>
+    </tr><tr>
+        <td><label for="etternavn">Etternavn:</label></td>
+        <td><input onchange="checkEtternavn()" id="etternavn" type="text" value=""/></td>
+        <td><div id="notValidEtternavn"></div></td>
+    </tr><tr>
+        <td><label for="telefonnr">Telefonnr:</label></td>
+        <td><input onchange="checkTelefonnr()" id="telefonnr" type="text" value=""/></td>
+        <td><div id="notValidTelefonnr"></div></td>
+    </tr><tr>
+        <td><label for="epost">Epost:</label></td>
+        <td><input onchange="checkEpost()" id="epost" type="text" value=""/></td>
+        <td><div id="notValidEpost"></div></td>
+    </tr>
+    </table>
+</form>
+<button onclick="kjopBillett(); checkFilm()" id="kjopBillett">Kjøp billett</button>
+<br/>
+<h2>Alle billetter</h2>
+<div id="visBilletter"></div>
+<br/>
+<button onclick="slettBilletter()" id="slettBilletter">Slett alle billettene</button>
+</body>
+</html>
